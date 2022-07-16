@@ -2,7 +2,7 @@
   hosts: all
   vars:
     - version: 7.2
-    - username: rakesh
+    - username: root
   tasks:
    - name: Create user
      user:
