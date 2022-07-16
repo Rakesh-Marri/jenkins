@@ -1,0 +1,31 @@
+- name: Practice
+  hosts: all
+  vars:
+    - version: 7.2
+    - username: rakesh
+  tasks:
+   - name: Create user
+     user:
+       name: demo
+       state: present
+   - name: Installing Nginx
+     yum:
+       name: nginx
+       state: present
+   - name: Starting Nginx
+     service:
+       name: nginx
+       state: started
+   - name: Creating Directory
+     file:
+       path: /home/rakesh/demo
+       state: directory
+       mode: 0777
+   - name: Creating File
+     file:
+       path: /home/rakesh/demo/test
+       state: touch
+   - name: Inserting into file
+     lineinfile:
+       path: /home/rakesh/demo/test
+       line: "This is version: {{ version }} created by user: {{ username }}"      
