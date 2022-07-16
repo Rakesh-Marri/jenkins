@@ -28,4 +28,4 @@
    - name: Inserting into file
      lineinfile:
        path: /home/rakesh/demo/test
-       line: "This is version: {{ version }} created by user: {{ username }}"      
+       line: "This is version: {{ version }} created by user: {{ username }}"
