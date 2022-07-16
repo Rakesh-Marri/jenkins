@@ -1,6 +1,6 @@
 ---
 
-hosts: [dev]
+hosts: dev
 tasks:
   - name: yum
     yum:
