@@ -4,7 +4,7 @@
     - version: 7.2
     - username: rakesh
   tasks:
-   - name: Create user
+   - name: Creating user
      user:
        name: demo
        state: present
