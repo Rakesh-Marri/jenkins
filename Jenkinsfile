@@ -1,12 +1,10 @@
-pipeline
-agent any
-{
-  stages
-     {
-       stage('build step')
+pipeline {
+    agent any
+    stages {
+        stage('build step')
          {
-          steps {
-             echo "this is for testing"
+            steps {
+               echo "this is for testing"
           }
        }
     }
