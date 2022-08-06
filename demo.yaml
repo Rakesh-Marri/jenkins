@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 - name: Practice
   hosts: all
   vars:
@@ -29,3 +30,36 @@
      lineinfile:
        path: /home/rakesh/demo/test
        line: "This is version: {{ version }} created by user: {{ username }}"
+=======
+- name: Practice
+  hosts: all
+  vars:
+    - version: 7.2
+    - username: rakesh
+  tasks:
+   - name: Creating user
+     user:
+       name: demo
+       state: present
+   - name: Installing Nginx
+     yum:
+       name: nginx
+       state: present
+   - name: Starting Nginx
+     service:
+       name: nginx
+       state: started
+   - name: Creating Directory
+     file:
+       path: /home/rakesh/demo
+       state: directory
+       mode: 0777
+   - name: Creating File
+     file:
+       path: /home/rakesh/demo/test
+       state: touch
+   - name: Inserting into file
+     lineinfile:
+       path: /home/rakesh/demo/test
+       line: "This is version: {{ version }} created by user: {{ username }}"      
+>>>>>>> efdf9e940cd232362cae580946b954042c55f18b
