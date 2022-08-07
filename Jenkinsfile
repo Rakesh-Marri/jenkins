@@ -10,7 +10,12 @@ pipeline {
         stage('deploy test') {
             steps {
               sh 'cat /etc/os-release'
-       }
-    }
+        }
+      }
+        stage('shell scripting') {
+            steps {
+              sh 'curl -k http://localhost:8080'
+      }
+     }
   }
 }
