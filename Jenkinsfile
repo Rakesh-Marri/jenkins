@@ -6,6 +6,11 @@ pipeline {
             steps {
                echo "this is for testing"
           }
+        }
+        stage('deploy test') {
+            steps {
+              echo "this is for deploying"
        }
     }
+  }
 }
