@@ -9,7 +9,7 @@ pipeline {
         }
         stage('deploy test') {
             steps {
-              echo "this is for deploying"
+              sh 'cat /etc/os-release'
        }
     }
   }
