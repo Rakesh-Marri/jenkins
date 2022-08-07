@@ -1,0 +1,18 @@
+
+- hosts: all
+  gather_facts: true
+  vars:
+   service: nginx
+  tasks:
+  - debug:
+      var: ansible_hostname
+  - debug:
+      var: ansible_all_ipv4_addresses
+  - debug:
+      var: ansible_distribution
+  - debug:
+      var: ansible_os_family
+  - service:
+      name: "{{ service }}"
+      state: restarted
+    when: ansible_distribution == "RedHat"
