@@ -17,5 +17,10 @@ pipeline {
               sh 'curl -k http://localhost:8080'
       }
      }
+       stage('ansible playbook') {
+        steps {
+          ansiblePlaybook installation: 'ansible2', inventory: 'hosts', playbook: 'facts.yml'
+    }
+   }
   }
 }
